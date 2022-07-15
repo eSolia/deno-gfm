@@ -94,7 +94,7 @@ export function render(markdown: string, opts: RenderOptions = {}): string {
       h5: ["id"],
       h6: ["id"],
       iframe: ["src", "width", "height"], // Only used when iframe tags are allowed in the first place.
-      span: ["id"]
+      span: ["id","style"]
     },
     allowedClasses: {
       div: ["highlight","callout1","callout2","callout3","callout4","callout5"],
@@ -116,8 +116,7 @@ export function render(markdown: string, opts: RenderOptions = {}): string {
         "script-punctuation",
         "script",
         "plain-text",
-        "property",
-        "text-red-600"
+        "property"
       ],
       a: ["anchor"],
       svg: ["octicon", "octicon-link"],
