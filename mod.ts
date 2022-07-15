@@ -54,6 +54,16 @@ export function render(markdown: string, opts: RenderOptions = {}): string {
     "video",
     "svg",
     "path",
+    "details",
+    "summary",
+    "cite",
+    "mark",
+    "acronym",
+    "abbr",
+    "address",
+    "ins",
+    "del",
+    "meter"
   ]);
   if (opts.allowIframes) {
     allowedTags.push("iframe");
@@ -74,7 +84,7 @@ export function render(markdown: string, opts: RenderOptions = {}): string {
         "loop",
         "playsinline",
       ],
-      a: ["id", "aria-hidden", "href", "tabindex", "rel"],
+      a: ["id", "aria-hidden", "href", "tabindex", "rel", "target"],
       svg: ["viewbox", "width", "height", "aria-hidden"],
       path: ["fill-rule", "d"],
       h1: ["id"],
@@ -84,9 +94,10 @@ export function render(markdown: string, opts: RenderOptions = {}): string {
       h5: ["id"],
       h6: ["id"],
       iframe: ["src", "width", "height"], // Only used when iframe tags are allowed in the first place.
+      span: ["id"]
     },
     allowedClasses: {
-      div: ["highlight"],
+      div: ["highlight","callout1","callout2","callout3","callout4","callout5"],
       span: [
         "token",
         "keyword",
@@ -106,6 +117,7 @@ export function render(markdown: string, opts: RenderOptions = {}): string {
         "script",
         "plain-text",
         "property",
+        "text-red-600"
       ],
       a: ["anchor"],
       svg: ["octicon", "octicon-link"],
